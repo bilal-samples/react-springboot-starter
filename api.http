@@ -1,0 +1,17 @@
+GET http://localhost:8010/api/client/
+
+###
+
+GET http://localhost:8010/api/client/1/
+
+###
+
+POST http://localhost:8010/api/client/
+Content-Type: application/json
+
+{
+  "firstName": "Bilal",
+  "lastName": "Shahid"
+}
+
+###
