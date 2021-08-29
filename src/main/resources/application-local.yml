@@ -1,0 +1,13 @@
+server:
+  port: 8010
+
+spring.jpa:
+  properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+  hibernate.ddl-auto: update
+
+spring.datasource:
+  username: postgres
+  password: postgres
+  url: jdbc:postgresql://localhost:5432/postgres
+  hikari:
+    driver-class-name: org.postgresql.Driver

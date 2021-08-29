@@ -1,0 +1,28 @@
+---
+version: '3.2'
+services:
+
+  qa-sample-site:
+    image: bilalnpe/react-springboot-starter:latest
+    container_name: sample-site
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    environment:
+      spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+      spring.jpa.hibernate.ddl-auto: update
+      spring.datasource.username: postgres
+      spring.datasource.password: postgres
+      spring.datasource.url: jdbc:postgresql://database:5432/postgres
+      spring.datasource.hikari.driver-class-name: org.postgresql.Driver
+
+  database:
+    image: postgres:11.6
+    container_name: database
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
